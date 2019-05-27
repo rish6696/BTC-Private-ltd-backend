@@ -20,6 +20,7 @@ router.post('/',(req,res)=>{
                 }
             ]
         }).then((result)=>{
+            console.log(result)
             if(result===null)
             {
                 console.log("result is null");
