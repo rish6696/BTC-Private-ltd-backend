@@ -25,14 +25,14 @@ router.post('/',(req,res)=>{
                 console.log("result is null");
                 res.send({
                     status:false,
-                    name:null
+                    username:null
                 })
             }
             else{
                 console.log("result is not null")
                res.send({
                    status:true,
-                   name:result.name
+                   username:result.username
                })
             }
         
