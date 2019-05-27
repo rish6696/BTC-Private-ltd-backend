@@ -13,7 +13,7 @@ router.post('/',(req,res)=>{
         userports.findOne({
             $and:[
                 {
-                    name:req.body.username
+                    username:req.body.username
                 },
                 {
                     password:req.body.password

@@ -10,7 +10,7 @@ router.post('/adduserports',(req,res)=>{
         const db=client.db('heroku_svj3zwsf');
         const userports=db.collection('userports');
         userports.insertOne({
-            name:req.body.username,
+            username:req.body.username,
             password:req.body.password
 
         }).then((result)=>{
