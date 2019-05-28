@@ -15,7 +15,7 @@ const routes={
 app.use('/authenticate',routes.authenticate);
 app.use('/login',routes.login);
 app.use('/booking',routes.booking);
-app.use('/fetchbookings');
+app.use('/fetchbookings',routes.fetchbookings);
 app.get('/',(req,res)=>{
     res.send("hello");
 })
