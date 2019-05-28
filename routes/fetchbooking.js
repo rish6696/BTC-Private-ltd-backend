@@ -13,7 +13,7 @@ router.post('/',(req,res)=>{
         const db=client.db('heroku_svj3zwsf');
         const bookings=db.collection('bookings');
         bookings.find({
-            username:req.body.username
+            port:req.body.username
         })
         
     })
