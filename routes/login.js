@@ -8,6 +8,8 @@ router.post('/',(req,res)=>{
     console.log(req.body);
 
     MongoClient.connect(DB_url,(err,client)=>{
+        if(err)
+        throw err;
         const db=client.db('heroku_svj3zwsf');
         const userports=db.collection('userports');
         userports.findOne({
