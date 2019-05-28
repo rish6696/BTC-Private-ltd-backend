@@ -14,6 +14,8 @@ router.post('/',(req,res)=>{
         const bookings=db.collection('bookings');
         bookings.find({
             port:req.body.username
+        }).toArray().then((result)=>{
+            res.send(result)
         })
         
     })
