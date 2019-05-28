@@ -14,8 +14,8 @@ router.post('/addbooking',(req,res)=>{
         const bookings=db.collection('bookings');
         bookings.insertOne({
            port:req.body.port,
-           truckbd:req.body.truckbd,
-           partybd:req.body.partybd
+           truckbd:req.body.tbd,
+           partybd:req.body.pbd
 
         }).then((result)=>{
             res.send(result.result);
