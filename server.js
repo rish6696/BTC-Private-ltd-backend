@@ -9,13 +9,15 @@ const routes={
     authenticate:require('./routes/authenticate'),
     login:require('./routes/login'),
     booking:require('./routes/booking'),
-    fetchbookings:require('./routes/fetchbookings')
+    fetchallports:require('./routes/fetchallports'),
+    fetchbookingbyname:require('./routes/fetchbooking')
 }
 
 app.use('/authenticate',routes.authenticate);
 app.use('/login',routes.login);
 app.use('/booking',routes.booking);
-app.use('/fetchbookings',routes.fetchbookings);
+app.use('/fetchallports',routes.fetchallports);
+app.use('/fetchbookings',routes.fetchbookingbyname)
 app.get('/',(req,res)=>{
     res.send("hello");
 })
