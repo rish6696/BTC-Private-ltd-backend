@@ -9,6 +9,9 @@ const DB_url="mongodb://heroku_svj3zwsf:rgfjj7agqpcq54ikuv3lghidul@ds143342.mlab
 router.post('/addbooking',(req,res)=>{
     console.log(req.body);
     const dateVariable=new Date();
+    const month=dateVariable.getMonth()+1;
+    const hrs=dateVariable.getHours()+5;
+    const minutes=dateVariable.getMinutes()+30;
 
     MongoClient.connect(DB_url,(err,client)=>{
         if(err)
@@ -19,8 +22,8 @@ router.post('/addbooking',(req,res)=>{
            port:req.body.port,
            truckbd:req.body.tbd,
            partybd:req.body.pbd,
-           date:dateVariable.getDate()+"/"+dateVariable.getMonth()+1+"/"+dateVariable.getFullYear(),
-           time:dateVariable.getHours()+":"+dateVariable.getMinutes()
+           date:dateVariable.getDate()+"/"+month+"/"+dateVariable.getFullYear(),
+           time:hrs+":"+minutes
           
            
 

@@ -30,3 +30,4 @@ app.listen(PORT,()=>{
     console.log("server started");
 })
 
+console.log(new Date().getDate());
