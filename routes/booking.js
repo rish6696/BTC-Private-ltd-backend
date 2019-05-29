@@ -20,8 +20,8 @@ router.post('/addbooking',(req,res)=>{
         const bookings=db.collection('bookings');
         bookings.insertOne({
            port:req.body.port,
-           truckbd:req.body.tbd,
-           partybd:req.body.pbd,
+           truck:req.body.truck,
+           party:req.body.party,
            date:dateVariable.getDate()+"/"+month+"/"+dateVariable.getFullYear(),
            time:hrs+":"+minutes
           
