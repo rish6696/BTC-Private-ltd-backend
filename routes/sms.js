@@ -15,7 +15,7 @@ router.post('/',(req,res)=>{
     })
     
     const from = 'Nexmo'
-    const to = '7838389193'
+    const to = '917838389193'
     const text = 'Hello from Nexmo'
     
     nexmo.message.sendSms(from, to, text,(err,response)=>{
