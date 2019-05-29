@@ -11,7 +11,7 @@ const routes={
     booking:require('./routes/booking'),
     fetchallports:require('./routes/fetchallports'),
     fetchbookingbyname:require('./routes/fetchbooking'),
-    sms:require('./routes/sms');
+    sms:require('./routes/sms')
 }
 
 app.use('/authenticate',routes.authenticate);
