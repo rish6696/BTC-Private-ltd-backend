@@ -10,7 +10,7 @@ router.post('/',(req,res)=>{
     console.log(req.body);
     const Nexmo = require('nexmo');
     const nexmo = new Nexmo({
-      apiKey: 'f556d7f2 (Master)',
+      apiKey: 'f556d7f2',
       apiSecret: 'njk1YnSkyKnnJ4qV'
     })
     
