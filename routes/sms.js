@@ -16,8 +16,12 @@ const authToken = '72da364f3a17e0f0eb386a348b142404';
 const client = require('twilio')(accountSid, authToken);
 
 client.messages
-      .create({from: '+15404183688', body: 'body', to: '7838389193'})
-      .then(message => console.log(message.sid));
+      .create({from: '+15404183688', body: 'hello', to: '7838389193'})
+      .then((messages)=>{
+          res.send(messages.sid);
+      });
+
+      
 
     
 
