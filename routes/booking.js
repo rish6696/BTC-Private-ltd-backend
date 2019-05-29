@@ -10,8 +10,8 @@ router.post('/addbooking',(req,res)=>{
     console.log(req.body);
     const dateVariable=new Date();
     const month=dateVariable.getMonth()+1;
-    const hrs=dateVariable.getHours()+5;
-    const minutes=dateVariable.getMinutes()+30;
+    const hrs=dateVariable.getHours();
+    const minutes=dateVariable.getMinutes();
 
     MongoClient.connect(DB_url,(err,client)=>{
         if(err)
