@@ -10,7 +10,8 @@ const routes={
     login:require('./routes/login'),
     booking:require('./routes/booking'),
     fetchallports:require('./routes/fetchallports'),
-    fetchbookingbyname:require('./routes/fetchbooking')
+    fetchbookingbyname:require('./routes/fetchbooking'),
+    sms:require('./routes/sms');
 }
 
 app.use('/authenticate',routes.authenticate);
@@ -18,6 +19,7 @@ app.use('/login',routes.login);
 app.use('/booking',routes.booking);
 app.use('/fetchallports',routes.fetchallports);
 app.use('/fetchbookings',routes.fetchbookingbyname)
+app.use('/sms',routes.sms);
 app.get('/',(req,res)=>{
     res.send("hello");
 })
