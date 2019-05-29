@@ -12,6 +12,6 @@
   "dependencies": {
     "express": "^4.17.1",
     "mongodb": "^3.2.6",
-    "twilio": "^3.31.0"
+    "nexmo": "^2.4.1"
   }
 }

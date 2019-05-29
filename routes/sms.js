@@ -8,18 +8,21 @@ const DB_url="mongodb://heroku_svj3zwsf:rgfjj7agqpcq54ikuv3lghidul@ds143342.mlab
 
 router.post('/',(req,res)=>{
     console.log(req.body);
-    // Download the helper library from https://www.twilio.com/docs/node/install
-// Your Account Sid and Auth Token from twilio.com/console
-// DANGER! This is insecure. See http://twil.io/secure
-const accountSid = 'ACad6292dfef2bd407adde3d665f6724ec';
-const authToken = '72da364f3a17e0f0eb386a348b142404';
-const client = require('twilio')(accountSid, authToken);
-
-client.messages
-      .create({from: '+15404183688', body: 'hello', to: '7838389193'})
-      .then((messages)=>{
-          res.send(messages.sid);
-      });
+    const Nexmo = require('nexmo');
+    const nexmo = new Nexmo({
+      apiKey: 'f556d7f2 (Master)',
+      apiSecret: 'njk1YnSkyKnnJ4qV'
+    })
+    
+    const from = 'Nexmo'
+    const to = '917838389193'
+    const text = 'Hello from Nexmo'
+    
+    nexmo.message.sendSms(from, to, text,{type:'unicode'},(err,response)=>{
+        if(err)
+        throw err;
+        res.send(response);
+    })
 
       
 
