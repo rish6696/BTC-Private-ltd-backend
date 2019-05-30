@@ -23,7 +23,9 @@ router.post('/addbooking',(req,res)=>{
            truck:req.body.truck,
            party:req.body.party,
            date:dateVariable.getDate()+"/"+month+"/"+dateVariable.getFullYear(),
-           time:hrs+":"+minutes
+           time:hrs+":"+minutes,
+           truckSecurity:req.body.truckSecurity,
+           partySecurity:req.body.partySecurity
           
            
 
