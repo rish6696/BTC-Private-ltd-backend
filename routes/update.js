@@ -12,7 +12,7 @@ router.post('/trucksecurity',(req,res)=>{
         throw err;
         const db=client.db('heroku_svj3zwsf');
         const bookings=db.collection('bookings');
-        bookings.updateOne({_id: new ObjectID(req.body._id)}, {$set: {"port": "punjab"}})
+        bookings.updateOne({_id: req.body._id}, {$set: {"port": "punjab"}})
         .then((result)=>{
             res.send(result);
         })
