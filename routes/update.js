@@ -18,6 +18,10 @@ router.post('/trucksecurity',(req,res)=>{
            $set:{
                date:"hello"
            }
+       }).then((result)=>{
+           res.send(result)
+       }).catch((err)=>{
+           res.send(err);
        })
         
     })
