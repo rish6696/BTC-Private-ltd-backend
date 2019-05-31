@@ -2,6 +2,7 @@ const express=require('express');
 const router=express.Router();
 const{MongoClient}=require('mongodb');
 const DB_url="mongodb://heroku_svj3zwsf:rgfjj7agqpcq54ikuv3lghidul@ds143342.mlab.com:43342/heroku_svj3zwsf";
+let ObjectID = require('mongodb').ObjectID;
 
 
 router.post('/trucksecurity',(req,res)=>{
@@ -13,7 +14,7 @@ router.post('/trucksecurity',(req,res)=>{
         const db=client.db('heroku_svj3zwsf');
         const bookings=db.collection('bookings');
         bookings.updateOne({
-            "_id":"5cf15e99086542001789b574"
+            _id:new ObjectID(req.body._id)
         },{
             $set:{
                 "port":"punjab"
