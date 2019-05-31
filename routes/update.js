@@ -17,7 +17,9 @@ router.post('/trucksecurity',(req,res)=>{
             _id:new ObjectID(req.body._id)
         },{
             $set:{
-                "port":"punjab"
+                truckSecurity:req.body.truckSecurity,
+                partySecurity:req.body.partySecurity,
+                status:req.body.status
             }
         }).then((result)=>{
             res.send(result);
