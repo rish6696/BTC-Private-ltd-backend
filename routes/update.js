@@ -5,7 +5,7 @@ const DB_url="mongodb://heroku_svj3zwsf:rgfjj7agqpcq54ikuv3lghidul@ds143342.mlab
 let ObjectID = require('mongodb').ObjectID;
 
 
-router.post('/trucksecurity',(req,res)=>{
+router.post('/',(req,res)=>{
     console.log(req.body);
 
     MongoClient.connect(DB_url,(err,client)=>{
