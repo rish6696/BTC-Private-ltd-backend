@@ -14,7 +14,7 @@ router.post('/trucksecurity',(req,res)=>{
         const bookings=db.collection('bookings');
         bookings.updateOne(
             {
-                _id: new ObjectID(req.body._id)
+                _id: req.body._id
             },{
                 $set:{
                     port:"punjab"
