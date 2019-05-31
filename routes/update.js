@@ -20,7 +20,9 @@ router.post('/trucksecurity',(req,res)=>{
                     port:"punjab"
                 }
             }
-        )
+        ).then((result)=>{
+            res.send(result);
+        })
        
         
     })
