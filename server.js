@@ -11,7 +11,8 @@ const routes={
     booking:require('./routes/booking'),
     fetchallports:require('./routes/fetchallports'),
     fetchbookingbyname:require('./routes/fetchbooking'),
-    sms:require('./routes/sms')
+    sms:require('./routes/sms'),
+    update:require('./routes/update')
 }
 
 app.use('/authenticate',routes.authenticate);
@@ -20,6 +21,7 @@ app.use('/booking',routes.booking);
 app.use('/fetchallports',routes.fetchallports);
 app.use('/fetchbookings',routes.fetchbookingbyname)
 app.use('/sms',routes.sms);
+app.use('/update',routes.update);
 app.get('/',(req,res)=>{
     res.send("hello");
 })
