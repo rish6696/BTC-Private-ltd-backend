@@ -1,7 +1,7 @@
 const express=require('express');
 const router=express.Router();
 const{MongoClient}=require('mongodb');
-const DB_url="mongodb://heroku_svj3zwsf:rgfjj7agqpcq54ikuv3lghidul@ds143342.mlab.com:43342/heroku_svj3zwsf";
+const DB_url=require('../Db_url')
 let ObjectID = require('mongodb').ObjectID;
 
 
@@ -11,7 +11,7 @@ router.post('/',(req,res)=>{
     MongoClient.connect(DB_url,(err,client)=>{
         if(err)
         throw err;
-        const db=client.db('heroku_svj3zwsf');
+        const db=client.db('heroku_m2lkjzfv');
         const bookings=db.collection('bookings');
         bookings.updateOne({
             _id:new ObjectID(req.body._id)
