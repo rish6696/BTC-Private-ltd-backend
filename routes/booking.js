@@ -22,7 +22,7 @@ router.post('/addbooking',(req,res)=>{
            port:req.body.port,
            truckAdvance:req.body.truck,
            partyAdvance:req.body.party,
-           date:dateVariable,
+           date:dateVariable.toString(),
            time:hrs+":"+minutes,
            truckSecurity:req.body.truckSecurity,
            partySecurity:req.body.partySecurity,
