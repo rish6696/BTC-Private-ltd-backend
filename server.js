@@ -4,6 +4,8 @@ const app=express();
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
+app.set('view engine','hbs')
+
 const PORT=process.env.PORT||3214;
 const routes={
     authenticate:require('./routes/authenticate'),
@@ -22,12 +24,11 @@ app.use('/fetchallports',routes.fetchallports);
 app.use('/fetchbookings',routes.fetchbookingbyname)
 app.use('/sms',routes.sms);
 app.use('/update',routes.update);
-app.get('/',(req,res)=>{
-    res.send("hello");
-})
+app.use('/',express.static('public'))
 
-app.get("/test",(req,res)=>{
-    res.send("hello");
+
+app.post("/test", (req,res)=>{
+    res.render('home')
 })
 
 app.listen(PORT,()=>{

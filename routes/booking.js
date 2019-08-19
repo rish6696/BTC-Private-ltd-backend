@@ -7,7 +7,7 @@ const DB_url=require('../Db_url')
 
 
 router.post('/addbooking',(req,res)=>{
-    console.log(req.body);
+    
     const dateVariable=new Date();
     const month=dateVariable.getMonth()+1;
     const hrs=dateVariable.getHours();
@@ -20,17 +20,13 @@ router.post('/addbooking',(req,res)=>{
         const bookings=db.collection('bookings');
         bookings.insertOne({
            port:req.body.port,
-           truck:req.body.truck,
-           party:req.body.party,
-           date:dateVariable.getDate()+"/"+month+"/"+dateVariable.getFullYear(),
+           truckAdvance:req.body.truck,
+           partyAdvance:req.body.party,
+           date:dateVariable,
            time:hrs+":"+minutes,
            truckSecurity:req.body.truckSecurity,
            partySecurity:req.body.partySecurity,
            status:req.body.status
-          
-           
-
-
         }).then((result)=>{
             res.send(result.result);
         })
