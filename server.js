@@ -24,12 +24,17 @@ app.use('/fetchallports',routes.fetchallports);
 app.use('/fetchbookings',routes.fetchbookingbyname)
 app.use('/sms',routes.sms);
 app.use('/update',routes.update);
+app.post('/getDetails',(req,res)=>{
+    console.log(req.body)
+})
 app.use('/',express.static('public'))
 
 
-app.post("/test", (req,res)=>{
-    res.render('home')
+app.use("/", (req,res)=>{
+    res.render('index')
 })
+
+
 
 app.listen(PORT,()=>{
     console.log("server started");

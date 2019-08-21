@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BtcRoadlinesPvtLtd</title>
+     <script src='https://code.jquery.com/jquery-3.4.1.min.js'></script>
+    <script src="/index.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-primary ">
+        <h1 style="color: beige; text-align: center">BTC ROAD LINES PRIVATE LTD</h1>
+   </nav>
+{{!-- <form>
+   <div style="margin: 10px" class="input-group mb-3">
+       
+         <select name="port" class="form-control" id="port" required>
+            <option selected>Select Office</option>
+             <option value="vishakapatnam" >Vishakapatnam</option>
+             <option value="faridabad" >Faridabad</option>
+             <option value="morbi" >Morbi</option>
+             <option value="jharsokra">Jharsokra</option>
+             <option  value="bombay">Bombay</option>
+             <option value="raipur" >Raipur</option>
+             <option value="raigarh" >Raigarh</option>
+             <option value="morbi" >Morbi</option>
+             <option value="kankroli" >Kankroli</option>
+             <option value="alwar" >alwar</option>
+         </select>
+    </div>
+    <div style="margin: 10px">
+        <h6 style="display: inline">Select From Date</h6>
+        <input id="fromDate" required  type="date">
+        <h6 style="display: inline">Select To Date</h6>
+        <input id="toDate" required  type="date">
+    </div>
+    <div style="margin: 10px" class="input-group mb-3">
+       
+         <select required class="form-control" id="details">
+            <option selected>Select Details</option>
+             <option >Truck Advance</option>
+             <option >Truck Security</option>
+             <option >Party Advance</option>
+             <option >Party Security</option>
+         </select>
+    </div>
+    <div  style="text-align: center">
+        <input type="submit">
+
+    </div>
+</form> --}}
+<form action="/getDetails" id="form" method="POST">
+  <div class="form-row">
+      <div style="margin: 10px" class="input-group">
+           <select  name="port" required class="form-control" id="details">
+             <option value="" selected>Select Office</option>
+             <option value="vishakapatnam" >Vishakapatnam</option>
+             <option value="faridabad" >Faridabad</option>
+             <option value="morbi" >Morbi</option>
+             <option value="jharsokra">Jharsokra</option>
+             <option  value="bombay">Bombay</option>
+             <option value="raipur" >Raipur</option>
+             <option value="raigarh" >Raigarh</option>
+             <option value="morbi" >Morbi</option>
+             <option value="kankroli" >Kankroli</option>
+             <option value="alwar" >alwar</option>
+         </select>
+
+      </div>
+      <div style="margin: 10px" class="input-group">
+        <h6 style="display: inline">Select From Date</h6>
+        <input name="fromDate" style="margin: 2px; border: blue 1px solid" id="fromDate" required  type="date">
+        <h6 style="display: inline">Select To Date</h6>
+        <input name="toDate" style="margin: 2px; border: blue 1px solid" id="toDate" required  type="date">
+    </div>
+    <div style="margin: 10px" class="input-group">
+        <select name="details" required class="form-control" id="details">
+            <option value="" selected>Select Details</option>
+             <option value="truckAdvance">Truck Advance</option>
+             <option value="truckSecurity" >Truck Security</option>
+             <option value="partyAdvance" >Party Advance</option>
+             <option value="partySecurity" >Party Security</option>
+         </select>
+      
+    </div>
+    
+  </div>
+  <button style="margin: 10px" type="submit" class="btn btn-primary">Submit</button>
+</form>
+</body>
+</html>
