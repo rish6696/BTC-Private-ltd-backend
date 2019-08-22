@@ -13,11 +13,23 @@ router.post('/getDetails',(req,res)=>{
     const toDate=(new Date(req.body.toDate)).toISOString()
     let project={date:1,port:1}
     let query={  date:{$lte:toDate,$gte:fromDate},port } 
-    if(details=='truckSecurity'||details=='partySecurity'){
-        query['status']=true;
+    if(details=='truckSecurity'){
+        query['truckSecurity.status']=true
         project['truckAdvance.truckno']=1;
-
+        project['partyAdvance.partyname']=1
     }
+    if(details=='partySecurity'){
+        query['partySecurity.status']=true
+        project['truckAdvance.truckno']=1;
+        project['partyAdvance.partyname']=1
+    }
+    if(details=='truckAdvance'){
+        project['partyAdvance.partyname']=1
+    }
+    if(details=='partyAdvance'){
+        project['truckAdvance.truckno']=1;
+    }
+    
     project[details]=1
     MongoClient.connect(DB_url,{useNewUrlParser:true},(err,client)=>{
         if(err)
