@@ -14,7 +14,8 @@ const routes={
     fetchallports:require('./routes/fetchallports'),
     fetchbookingbyname:require('./routes/fetchbooking'),
     sms:require('./routes/sms'),
-    update:require('./routes/update')
+    update:require('./routes/update'),
+    dashboard:require('./routes/dashboard')
 }
 
 app.use('/authenticate',routes.authenticate);
@@ -24,9 +25,8 @@ app.use('/fetchallports',routes.fetchallports);
 app.use('/fetchbookings',routes.fetchbookingbyname)
 app.use('/sms',routes.sms);
 app.use('/update',routes.update);
-app.post('/getDetails',(req,res)=>{
-    console.log(req.body)
-})
+app.use('/dashboard',routes.dashboard)
+
 app.use('/',express.static('public'))
 
 
@@ -40,4 +40,3 @@ app.listen(PORT,()=>{
     console.log("server started");
 })
 
-console.log(new Date().getDate());
