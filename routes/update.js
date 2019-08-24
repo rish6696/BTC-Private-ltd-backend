@@ -7,11 +7,12 @@ let ObjectID = require('mongodb').ObjectID;
 
 router.post('/',(req,res)=>{
     const date=(new Date()).toISOString()
+    console.log(!req.body.truckSecurity.date)
     if(req.body.truckSecurity.status&&!req.body.truckSecurity.date){
         console.log('updated truck security')
         req.body.truckSecurity['date']=date
     }
-    if(req.body.partySecurity.status){
+    if(req.body.partySecurity.status&&!req.body.partySecurity.date){
         console.log('updated party security')
         req.body.partySecurity['date']=date
     }
