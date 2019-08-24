@@ -5,14 +5,18 @@ const DB_url=require('../Db_url')
 //mongodb://heroku_svj3zwsf:rgfjj7agqpcq54ikuv3lghidul@ds143342.mlab.com:43342/heroku_svj3zwsf
 
 router.post('/getDetails',(req,res)=>{
+    console.log(req.body)
     
 
     const {port,details}=req.body
-    console.log(details)
+   
     const fromDate=(new Date(req.body.fromDate)).toISOString()
     const toDate=(new Date(req.body.toDate)).toISOString()
     let project={date:1,port:1}
-    let query={  date:{$lte:toDate,$gte:fromDate},port } 
+    let query={  date:{$lte:toDate,$gte:fromDate} } 
+    if(port){
+        query['port']=port
+    }
     if(details=='truckSecurity'){
         query['truckSecurity.status']=true
         project['truckAdvance.truckno']=1;
