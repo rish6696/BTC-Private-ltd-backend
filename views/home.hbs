@@ -55,7 +55,7 @@
 <form action="/dashboard/getDetails" id="form" method="POST">
   <div class="form-row">
       <div style="margin: 10px" class="input-group">
-           <select  name="port" required class="form-control" id="details">
+           <select  name="port"  class="form-control" id="details">
              <option value="" selected>Select Office</option>
              <option value="" >All</option>
              <option value="vishakapatnam" >Vishakapatnam</option>
@@ -81,6 +81,33 @@
       </div>
     <div style="margin: 10px" class="input-group">
         <select name="details" required class="form-control" id="details">
+            <option value="" selected>Select Details</option>
+             <option value="truckAdvance">Truck Advance</option>
+             <option value="truckSecurity" >Truck Security</option>
+             <option value="partyAdvance" >Party Advance</option>
+             <option value="partySecurity" >Party Security</option>
+         </select>
+      
+    </div>
+    
+  </div>
+  <button style="margin: 10px" type="submit" class="btn btn-primary">Submit</button>
+</form>
+<hr style="margin-top: 1rem; margin-bottom: 1rem; border: 0;border-top: 1px solid rgba(0, 0, 0, 0.9);">
+
+<form action="/dashboard/getDetails" id="truck" method="POST">
+  <div class="form-row">
+      <input type='text' class='form-control' name="truckno"  required style="margin:10px" placeholder="Enter Truck No" >
+      <div style="margin: 10px" class="input-group" >
+        <h6 >Select From Date</h6>
+        <input name="fromDate" style="margin: 2px; border: blue 1px solid" id="tfromDate" required  type="date">
+       </div>
+       <div style="margin: 10px" class="input-group">
+        <h6 >Select To Date</h6>
+        <input name="toDate" style="margin: 2px; border: blue 1px solid" id="ttoDate" required  type="date">
+      </div>
+    <div style="margin: 10px" class="input-group">
+        <select name="details" required class="form-control" id="tdetails">
             <option value="" selected>Select Details</option>
              <option value="truckAdvance">Truck Advance</option>
              <option value="truckSecurity" >Truck Security</option>

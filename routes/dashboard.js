@@ -6,16 +6,19 @@ const DB_url=require('../Db_url')
 
 router.post('/getDetails',(req,res)=>{
     console.log(req.body)
-    
-
-    const {port,details}=req.body
-   
+    let {port,details,truckno}=req.body
     const fromDate=(new Date(req.body.fromDate)).toISOString()
     const toDate=(new Date(req.body.toDate)).toISOString()
     let project={date:1,port:1}
     let query={  date:{$lte:toDate,$gte:fromDate} } 
     if(port){
         query['port']=port
+    }
+    if(truckno){
+        truckno=truckno.replace(/\s/g, "")
+        truckno=truckno.toUpperCase()
+        console.log(truckno)
+        query['truckAdvance.truckno']=truckno
     }
     if(details=='truckSecurity'){
         query['truckSecurity.status']=true

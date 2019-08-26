@@ -18,6 +18,8 @@ router.post('/addbooking',(req,res)=>{
         throw err;
         const db=client.db('heroku_m2lkjzfv');
         const bookings=db.collection('bookings');
+        req.body.truckAdvance.truckno=req.body.truckAdvance.truckno.replace(/\s/g, "")
+        req.body.truckAdvance.truckno=req.body.truckAdvance.truckno.toUpperCase()
         bookings.insertOne({
            port:req.body.port,
            truckAdvance:req.body.truckAdvance,
