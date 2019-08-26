@@ -1,11 +1,12 @@
 
 $(()=>{
    console.log(data)
-    data.forEach(x => {
+    data.forEach((x,i) => {
         let date=x.partySecurity.date.substr(0,10)
         date= date.replace(new RegExp("-", "g"), ".");
         $('#body').append(
                $('<tr>')
+               .append($('<td>').text(i+1))
                .append($('<td>').text(x.port))
 
                .append($('<td>').text(x.partyAdvance.partyname))

@@ -9,7 +9,7 @@ router.post('/getDetails',(req,res)=>{
     let {port,details,truckno}=req.body
     const fromDate=(new Date(req.body.fromDate)).toISOString()
     const toDate=(new Date(req.body.toDate)).toISOString()
-    let project={date:1,port:1}
+    let project={date:1,port:1,status:1}
     let query={  date:{$lte:toDate,$gte:fromDate} } 
     if(port){
         query['port']=port
