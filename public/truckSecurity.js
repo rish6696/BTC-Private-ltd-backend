@@ -2,7 +2,7 @@
 $(()=>{
     console.log(data)
     data.forEach(x => {
-        let date=x.date.substr(0,10)
+        let date=x.truckSecurity.date.substr(0,10)
         date= date.replace(new RegExp("-", "g"), ".");
         let remarks=x.truckSecurity.remarks
         let acountno=x.truckSecurity.aacounum

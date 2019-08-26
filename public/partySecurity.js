@@ -2,7 +2,7 @@
 $(()=>{
    console.log(data)
     data.forEach(x => {
-        let date=x.date.substr(0,10)
+        let date=x.partySecurity.date.substr(0,10)
         date= date.replace(new RegExp("-", "g"), ".");
         $('#body').append(
                $('<tr>')
