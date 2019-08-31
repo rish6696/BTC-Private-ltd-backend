@@ -1,4 +1,4 @@
-const DB_URL='mongodb://heroku_m2lkjzfv:45vnbqra8sh2icliqbpns2tkm5@ds263307.mlab.com:63307/heroku_m2lkjzfv'
+const DB_URL='mongodb://heroku_n2sd96z8:graosrbgfetudt28c7vo2jaeqr@ds161121.mlab.com:61121/heroku_n2sd96z8'
 module.exports=DB_URL
 
 //username: heroku_m2lkjzfv
