@@ -16,7 +16,6 @@ $(()=>{
                .append($('<td>').text(x.partyAdvance.lrnum))
                .append($('<td>').text(x.partyAdvance.loadadress))
                .append($('<td>').text(x.partyAdvance.unloadadress))
-               .append($('<td>').text(x.partyAdvance.contact))
                .append($('<td>').text(x.partyAdvance.weight))
                .append($('<td>').text(x.partyAdvance.rate))
                .append($('<td>').text(x.partyAdvance.total))
