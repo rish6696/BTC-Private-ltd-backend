@@ -1,4 +1,6 @@
-const DB_URL='mongodb://heroku_n2sd96z8:graosrbgfetudt28c7vo2jaeqr@ds161121.mlab.com:61121/heroku_n2sd96z8'
+const dotenv=require('dotenv')
+dotenv.config();
+const DB_URL=process.env.MONGODB_URI 
 module.exports=DB_URL
 
 //username: heroku_m2lkjzfv
