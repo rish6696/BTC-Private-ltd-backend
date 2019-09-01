@@ -7,10 +7,14 @@ const DB_url=require('../Db_url')
 router.post('/getDetails',(req,res)=>{
     console.log(req.body)
     let {port,details,truckno}=req.body
-    const fromDate=(new Date(req.body.fromDate)).toISOString()
-    const toDate=(new Date(req.body.toDate)).toISOString()
+    let fromDate=new Date(req.body.fromDate)
+    fromDate.setDate(fromDate.getDate()+1)
+    let toDate=new Date(req.body.toDate)
+    toDate.setDate(toDate.getDate()+1)
+    fromDate=fromDate.toISOString()
+    toDate=toDate.toISOString()
     let project={date:1,port:1,status:1}
-    let query={  date:{$lte:toDate,$gte:fromDate} } 
+    let query={  date:{$lte:toDate,$gte:fromDate}  } 
     if(port){
         query['port']=port
     }
