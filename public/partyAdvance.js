@@ -21,9 +21,9 @@ $(()=>{
                .append($('<td>').text(x.partyAdvance.rate))
                .append($('<td>').text(x.partyAdvance.total))
                .append($('<td>').text(x.partyAdvance.cash))
-               .append($('<td>').text(x.partyAdvance.security))
                .append($('<td>').text(x.partyAdvance.loadingcharge))
                .append($('<td>').text(x.partyAdvance.diesel))
+               .append($('<td>').text(x.partyAdvance.security))
                .append($('<td>').text(x.partyAdvance.balance))
 
                
