@@ -11,7 +11,7 @@ router.post('/',(req,res)=>{
     MongoClient.connect(DB_url,(err,client)=>{
         if(err)
         throw err;
-        const db=client.db('heroku_m2lkjzfv');
+        const db=client.db(process.env.DB_USER);
         const bookings=db.collection('bookings');
         bookings.find({
             port:req.body.username

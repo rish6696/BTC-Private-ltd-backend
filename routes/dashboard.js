@@ -41,7 +41,7 @@ router.post('/getDetails',(req,res)=>{
     MongoClient.connect(DB_url,{useNewUrlParser:true},(err,client)=>{
         if(err)
         throw err;
-        const db=client.db('heroku_m2lkjzfv');
+        const db=client.db(process.env.DB_USER);
         const bookings=db.collection('bookings');
         bookings.find(query).project(project).toArray()
         .then(x=>res.render(details,{data:JSON.stringify(x)}))
