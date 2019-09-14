@@ -5,3 +5,8 @@
 .table th{
     border: black solid 2px !important;
 }
+
+.table td{
+    color: black;
+    font-size: 13pt;
+}
