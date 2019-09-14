@@ -24,6 +24,7 @@ $(()=>{
                .append($('<td>').text(x.truckAdvance.diesel))
                .append($('<td>').text(x.truckAdvance.comisiion))
                .append($('<td>').text(x.truckAdvance.bilty))
+               .append($('<td>').text(x.truckAdvance.dala))
                .append($('<td>').text(x.truckAdvance.security))
                .append($('<td>').text(x.truckAdvance.balance))
                .append($('<td>').text(x.truckAdvance.accountno))
