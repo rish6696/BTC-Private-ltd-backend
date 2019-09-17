@@ -2,10 +2,17 @@ const express=require('express');
 const router=express.Router();
 const{MongoClient}=require('mongodb');
 const DB_url=require('../Db_url')
+
+const pageSize=5;
+
 //mongodb://heroku_svj3zwsf:rgfjj7agqpcq54ikuv3lghidul@ds143342.mlab.com:43342/heroku_svj3zwsf
 
 router.post('/getDetails',(req,res)=>{
     console.log(req.body)
+    let pageNo=req.body.pageNo;
+    if(!pageNo){
+        pageNo=1;
+    }
     let {port,details,truckno}=req.body
     let fromDate=new Date(req.body.fromDate)
     fromDate.setDate(fromDate.getDate()+1)
@@ -47,7 +54,8 @@ router.post('/getDetails',(req,res)=>{
         throw err;
         const db=client.db(process.env.DB_USER);
         const bookings=db.collection('bookings');
-        bookings.find(query).project(project).toArray()
+        bookings.find(query).skip((pageNo-1)*pageSize).limit(pageSize).project(project).toArray()
+       // .then(x=>res.send(x))
         .then(x=>res.render(details,{data:JSON.stringify(x)}))
         .catch(x=>console.log(x))
         client.close()

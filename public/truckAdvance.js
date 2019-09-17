@@ -1,5 +1,6 @@
 
 $(()=>{
+
     console.log(data)
     data.forEach((x,i) => {
         let date=x.date.substr(0,10)
@@ -34,4 +35,12 @@ $(()=>{
             )
         
     });
+
+    $('.page-link').click(()=>{
+          $.post('/dashboard/getdetails',{
+              
+          })
+    })
+
+
 })
