@@ -43,6 +43,8 @@ router.post('/getDetails',(req,res)=>{
     }
     if(details=='truckAdvance'){
         project['partyAdvance.partyname']=1
+        project['partyAdvance.loadadress']=1
+        project['partyAdvance.unloadadress']=1
     }
     if(details=='partyAdvance'){
         project['truckAdvance.truckno']=1;

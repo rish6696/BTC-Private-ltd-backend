@@ -8,8 +8,8 @@ $(()=>{
         $('#body').append(
                $('<tr>')
                .append($('<td>').text(i+1))
-               .append($('<td>').append($('<img>').attr('src',imagesrc)))
-               .append($('<td>').text(x.port))
+            //    .append($('<td>').append($('<img>').attr('src',imagesrc)))
+            //    .append($('<td>').text(x.port))
                .append($('<td>').text(x.partyAdvance.partyname))
                .append($('<td>').text(date))
                .append($('<td>').text(x.truckAdvance.truckno))
